@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <ncurses.h>
 #include <menu.h>
+#include <monitor.h>
 
 #define WIDTH 50
 #define HEIGHT 25
@@ -62,11 +63,9 @@ void *main_menu()
             break;
         case 10:
             choice = highlight;
-            mvwprintw(menu_win, 15, 2, "You chose choice %d with choice string %s", choice, choices[choice - 1]);
-            refresh();
+            set_output(choice);
             break;
         default:
-            mvprintw(24, 0, "Charcter pressed is = %3d Hopefully it can be printed as '%c'", c, c);
             refresh();
             break;
         }

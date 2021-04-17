@@ -26,6 +26,7 @@ typedef struct {
 
 void monitor();
 void set_input(int code);
+void set_output(int code);
 Input get_input();
 Output get_output();
 

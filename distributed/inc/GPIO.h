@@ -14,10 +14,20 @@
 #define ABR5 28
 #define ABR6 29
 
-#ifndef CLIENT_H_
-#define CLIENT_H_
+#ifndef GPIO_H_
+#define GPIO_H_
 
-void request_GPIO_toggle(int port, char* response);
-void request_BME280_data(char* response);
+typedef struct {
+  int lamp1;
+  int lamp2;
+  int lamp3;
+  int lamp4;
+  int ac1;
+  int ac2;
+} Output;
 
-#endif /* CLIENT_H_ */
+void init_GPIO();
+void* main_GPIO();
+void GPIO_toggle(int port);
+
+#endif /* GPIO_H_ */
