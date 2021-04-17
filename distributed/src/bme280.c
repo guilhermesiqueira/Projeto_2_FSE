@@ -1714,7 +1714,10 @@ struct bme280_data bme280_read() {
     rslt = bme280_start(&disp);
     if (rslt != BME280_OK) {
         printf("erro ao iniciar bme280.\n");
-        return -1;
+        struct bme280_data data;
+        data.temperature = 0;
+        data.humidity = 0;
+        return data;
     }
 
     return stream_sensor_data_normal_mode(&disp);

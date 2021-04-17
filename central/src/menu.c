@@ -109,4 +109,11 @@ void print_data(Output output)
     mvwprintw(menu_win, 6, 21, "%s", output.ac1 ? "LIGADO   " : "DESLIGADO");
     mvwprintw(menu_win, 7, 21, "%s", output.ac2 ? "LIGADO   " : "DESLIGADO");
     mvwprintw(menu_win, 8, 21, "%s", output.alarm ? "LIGADO   " : "DESLIGADO");
+    wrefresh(menu_win);
+}
+
+void print_temperature(float temperature, float humidity) {
+    mvwprintw(menu_win, 9, 2, "Temperatura: %4.2f", temperature);
+    mvwprintw(menu_win, 10, 2, "Umidade: %4.2f", humidity);    
+    wrefresh(menu_win);
 }

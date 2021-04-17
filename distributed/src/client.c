@@ -8,7 +8,7 @@
 #include <string.h>
 #include <sys/types.h>
 #include <fcntl.h>
-#include <gpio.h>
+#include <GPIO.h>
 #include <bme280.h>
 
 #define SERVER_CENTRAL_IP "192.168.0.53"

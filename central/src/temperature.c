@@ -3,14 +3,19 @@
 #include <client.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <menu.h>
 
 void* main_temperature(){
     while (1)
     {
         char response[16];
-        float temperature, hum
+        float temperature, humidity;
+        char res;
+        
         request_BME280_data(response);
-        sscanf(response, "%c %f %f", );
+        sscanf(response, "%c %f %f", res, temperature, humidity);
+        print_temperature(temperature, humidity);
+
         usleep(1000000);
     }
 }
