@@ -1,28 +1,29 @@
 #include <stdio.h>
 #include <ncurses.h>
+#include <menu.h>
 
 #define WIDTH 50
 #define HEIGHT 25
 
 int startx = 0;
 int starty = 0;
+WINDOW *menu_win;
 
 char *choices[] = {
-    "Lampada 1: ",
-    "Lampada 2: ",
-    "Lampada 3: ",
-    "Lampada 4: ",
-    "Ar-condicionado 1: ",
-    "Ar-condicionado 2: ",
-    "Alarme: ",
+    "Lampada 1:",
+    "Lampada 2:",
+    "Lampada 3:",
+    "Lampada 4:",
+    "Ar-condicionado 1:",
+    "Ar-condicionado 2:",
+    "Alarme:",
     "Exit",
 };
 int n_choices = sizeof(choices) / sizeof(char *);
 void print_menu(WINDOW *menu_win, int highlight);
 
-void* main_menu()
+void *main_menu()
 {
-    WINDOW *menu_win;
     int highlight = 1;
     int choice = 0;
     int c;
@@ -31,6 +32,7 @@ void* main_menu()
     clear();
     noecho();
     cbreak(); /* Line buffering disabled. pass on everything */
+    curs_set(0);
     startx = (80 - WIDTH) / 2;
     starty = (24 - HEIGHT) / 2;
 
@@ -38,9 +40,11 @@ void* main_menu()
     keypad(menu_win, TRUE);
     // mvprintw(0, 0, "Use arrow keys to go up and down, Press enter to select a choice");
     refresh();
-    print_menu(menu_win, highlight);
     while (1)
     {
+        print_menu(menu_win, highlight);
+        Output output = get_output();
+        print_data(output);
         c = wgetch(menu_win);
         switch (c)
         {
@@ -67,7 +71,7 @@ void* main_menu()
             break;
         }
         print_menu(menu_win, highlight);
-        if (choice == 8) /* User did a choice come out of the infinite loop */
+        if (choice == 8)
             break;
     }
     clrtoeol();
@@ -84,7 +88,7 @@ void print_menu(WINDOW *menu_win, int highlight)
     box(menu_win, 0, 0);
     for (i = 0; i < n_choices; ++i)
     {
-        if (highlight == i + 1) 
+        if (highlight == i + 1)
         {
             wattron(menu_win, A_REVERSE);
             mvwprintw(menu_win, y, x, "%s", choices[i]);
@@ -95,4 +99,15 @@ void print_menu(WINDOW *menu_win, int highlight)
         ++y;
     }
     wrefresh(menu_win);
+}
+
+void print_data(Output output)
+{
+    mvwprintw(menu_win, 2, 21, "%s", output.lamp1 ? "LIGADO   " : "DESLIGADO");
+    mvwprintw(menu_win, 3, 21, "%s", output.lamp2 ? "LIGADO   " : "DESLIGADO");
+    mvwprintw(menu_win, 4, 21, "%s", output.lamp3 ? "LIGADO   " : "DESLIGADO");
+    mvwprintw(menu_win, 5, 21, "%s", output.lamp4 ? "LIGADO   " : "DESLIGADO");
+    mvwprintw(menu_win, 6, 21, "%s", output.ac1 ? "LIGADO   " : "DESLIGADO");
+    mvwprintw(menu_win, 7, 21, "%s", output.ac2 ? "LIGADO   " : "DESLIGADO");
+    mvwprintw(menu_win, 8, 21, "%s", output.alarm ? "LIGADO   " : "DESLIGADO");
 }
