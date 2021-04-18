@@ -116,8 +116,9 @@ void print_data(Output output)
 }
 
 void print_temperature(float temperature, float humidity) {
-    mvwprintw(menu_win, 10, 2, "Temperatura: %4.2f", temperature);
-    mvwprintw(menu_win, 11, 2, "Umidade: %4.2f", humidity);    
+    printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n TEMPERATURAAAAAA: %f", temperature);
+    mvwprintw(menu_win, 10, 2, "Temperatura: %f", temperature);
+    mvwprintw(menu_win, 11, 2, "Umidade: %f", humidity);    
     wrefresh(menu_win);
 }
 
