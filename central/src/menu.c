@@ -32,7 +32,7 @@ void* main_menu()
     initscr();
     clear();
     noecho();
-    cbreak(); /* Line buffering disabled. pass on everything */
+    cbreak(); 
     curs_set(0);
     startx = (80 - WIDTH) / 2;
     starty = (24 - HEIGHT) / 2;
@@ -65,6 +65,7 @@ void* main_menu()
             break;
         case 10:
             choice = highlight;
+            mvwprintw(menu_win, 28, 2, "You chose choice %d with choice string %s", choice, choices[choice - 1]); //debug
             set_output(choice);
             break;
         default:

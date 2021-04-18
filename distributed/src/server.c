@@ -49,6 +49,7 @@ void *create_server()
 
         char code;
         sscanf(buffer, "%c", &code);
+        printf("code:::::::: %c\n", code);
         if(code == 'B'){
             struct bme280_data data = bme280_read();
             char response[16];
