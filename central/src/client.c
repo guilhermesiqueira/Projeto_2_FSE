@@ -14,7 +14,6 @@
 
 void request_GPIO_toggle(int port, char* response)
 {
-    printf("\n\n\n\n\n\\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nrequest gpio toggle: %d\n", port);
     struct sockaddr_in client;
 
     int socketid = socket(AF_INET, SOCK_STREAM, 0);

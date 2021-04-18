@@ -45,7 +45,6 @@ void *create_server()
         }
 
         buffer[15] = '\0';
-        printf("\n\n\n\n\n\\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n BUFFER: %s\n", buffer);
         int code;
         sscanf(buffer, "%d", &code);
         set_input(code);
