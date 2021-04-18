@@ -10,11 +10,11 @@ void* main_temperature(){
     {
         char response[16];
         float temperature, humidity;
-        char res;
+        int res;
         
         request_BME280_data(response);
-        printf("response: %f\n", response);
-        sscanf(response, "%c %f %f", res, temperature, humidity);
+        printf("response: %c\n", response);
+        sscanf(response, "%d %lf %lf", res, temperature, humidity);
         print_temperature(temperature, humidity);
 
         usleep(1000000);
