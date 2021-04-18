@@ -4,7 +4,7 @@
 #include <monitoring.h>
 
 #define WIDTH 100
-#define HEIGHT 25
+#define HEIGHT 30
 
 int startx = 0;
 int starty = 0;
@@ -18,7 +18,7 @@ char *choices[] = {
     "Ar-condicionado 1:",
     "Ar-condicionado 2:",
     "Alarme:",
-    "Exit",
+    "Sair",
 };
 int n_choices = sizeof(choices) / sizeof(char *);
 void print_menu(WINDOW *menu_win, int highlight);
@@ -104,13 +104,13 @@ void print_menu(WINDOW *menu_win, int highlight)
 
 void print_data(Output output)
 {
-    mvwprintw(menu_win, 2, 21, "%s", output.lamp1 == 1 ? "LIGADO   " : "DESLIGADO");
-    mvwprintw(menu_win, 3, 21, "%s", output.lamp2 == 1 ? "LIGADO   " : "DESLIGADO");
-    mvwprintw(menu_win, 4, 21, "%s", output.lamp3 == 1 ? "LIGADO   " : "DESLIGADO");
-    mvwprintw(menu_win, 5, 21, "%s", output.lamp4 == 1 ? "LIGADO   " : "DESLIGADO");
-    mvwprintw(menu_win, 6, 21, "%s", output.ac1 == 1 ? "LIGADO   " : "DESLIGADO");
-    mvwprintw(menu_win, 7, 21, "%s", output.ac2 == 1 ? "LIGADO   " : "DESLIGADO");
-    mvwprintw(menu_win, 8, 21, "%s", output.alarm == 1 ? "LIGADO   " : "DESLIGADO");
+    mvwprintw(menu_win, 2, 21, "%s", output.lamp1 == 1 ? "LIGADO        " : "DESLIGADO");
+    mvwprintw(menu_win, 3, 21, "%s", output.lamp2 == 1 ? "LIGADO        " : "DESLIGADO");
+    mvwprintw(menu_win, 4, 21, "%s", output.lamp3 == 1 ? "LIGADO        " : "DESLIGADO");
+    mvwprintw(menu_win, 5, 21, "%s", output.lamp4 == 1 ? "LIGADO        " : "DESLIGADO");
+    mvwprintw(menu_win, 6, 21, "%s", output.ac1 == 1 ? "LIGADO        " : "DESLIGADO");
+    mvwprintw(menu_win, 7, 21, "%s", output.ac2 == 1 ? "LIGADO        " : "DESLIGADO");
+    mvwprintw(menu_win, 8, 21, "%s", output.alarm == 1 ? "LIGADO        " : "DESLIGADO");
     wrefresh(menu_win);
 }
 
@@ -121,29 +121,29 @@ void print_temperature(float temperature, float humidity) {
 }
 
 void print_entry(Input input) {
-	mvwprintw(menu_win, 13, 22, "Sensor de Presença 01 (Sala):");
-	mvwprintw(menu_win, 13, 61, input.pres1 == 1 ? "LIGADO " : "DESLIGADO");
+	mvwprintw(menu_win, 13, 2, "Sensor de Presença 01 (Sala):");
+	mvwprintw(menu_win, 13, 21, input.pres1 == 1 ? "LIGADO   " : "DESLIGADO");
 
-	mvwprintw(menu_win, 14, 22, "Sensor de Presença 02 (Cozinha):");
-	mvwprintw(menu_win, 14, 61, input.pres2 == 1 ? "LIGADO " : "DESLIGADO");
+	mvwprintw(menu_win, 14, 2, "Sensor de Presença 02 (Cozinha):");
+	mvwprintw(menu_win, 14, 21, input.pres2 == 1 ? "LIGADO   " : "DESLIGADO");
 
-	mvwprintw(menu_win, 15, 22, "Sensor Abertura 01 (Porta Cozinha):");
-	mvwprintw(menu_win, 15, 61, input.abr1 == 1 ? "LIGADO      " : "DESLIGADO");
+	mvwprintw(menu_win, 15, 2, "Sensor Abertura 01 (Porta Cozinha):");
+	mvwprintw(menu_win, 15, 21, input.abr1 == 1 ? "LIGADO   " : "DESLIGADO");
 
-	mvwprintw(menu_win, 16, 22, "Sensor Abertura 02 (Janela Cozinha):");
-	mvwprintw(menu_win, 16, 61, input.abr2 == 1 ? "LIGADO      " : "DESLIGADO");
+	mvwprintw(menu_win, 16, 2, "Sensor Abertura 02 (Janela Cozinha):");
+	mvwprintw(menu_win, 16, 21, input.abr2 == 1 ? "LIGADO   " : "DESLIGADO");
 
-	mvwprintw(menu_win, 17, 22, "Sensor Abertura 03 (Porta Sala):");
-	mvwprintw(menu_win, 17, 61, input.abr3 == 1 ? "LIGADO      " : "DESLIGADO");
+	mvwprintw(menu_win, 17, 2, "Sensor Abertura 03 (Porta Sala):");
+	mvwprintw(menu_win, 17, 21, input.abr3 == 1 ? "LIGADO   " : "DESLIGADO");
 
-	mvwprintw(menu_win, 18, 22, "Sensor Abertura 04 (Janela Sala):");
-	mvwprintw(menu_win, 18, 61, input.abr4 == 1 ? "LIGADO      " : "DESLIGADO");
+	mvwprintw(menu_win, 18, 2, "Sensor Abertura 04 (Janela Sala):");
+	mvwprintw(menu_win, 18, 21, input.abr4 == 1 ? "LIGADO   " : "DESLIGADO");
 
-	mvwprintw(menu_win, 19, 22, "Sensor Abertura 05 (Janela Quarto 01):");
-	mvwprintw(menu_win, 19, 61, input.abr5 == 1 ? "LIGADO      " : "DESLIGADO");
+	mvwprintw(menu_win, 19, 2, "Sensor Abertura 05 (Janela Quarto 01):");
+	mvwprintw(menu_win, 19, 21, input.abr5 == 1 ? "LIGADO      " : "DESLIGADO");
 
-	mvwprintw(menu_win, 20, 22, "Sensor Abertura 06 (Janela Quarto 02):");
-	mvwprintw(menu_win, 20, 61, input.abr6 == 1 ? "LIGADO      " : "DESLIGADO");
+	mvwprintw(menu_win, 20, 2, "Sensor Abertura 06 (Janela Quarto 02):");
+	mvwprintw(menu_win, 20, 21, input.abr6 == 1 ? "LIGADO      " : "DESLIGADO");
 
     wrefresh(menu_win);
 }
