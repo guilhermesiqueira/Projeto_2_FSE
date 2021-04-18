@@ -75,8 +75,8 @@ void request_BME280_data(char* response)
         exit(1);
     }
 
-    char buf[2];
-    snprintf(buf, 2, "%c", 'B');
+    char buf[3];
+    snprintf(buf, 3, "%c", 'B');
     int size = strlen(buf);
     if (send(socketid, buf, size, 0) != size)
     {

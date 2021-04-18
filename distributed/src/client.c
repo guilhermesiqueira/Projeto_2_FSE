@@ -33,8 +33,8 @@ void send_GPIO_toggle(int port)
         exit(1);
     }
 
-    char buf[2];
-    snprintf(buf, 2, "%d", port);
+    char buf[3];
+    snprintf(buf, 3, "%d", port);
     int size = strlen(buf);
     if (send(socketid, buf, size, 0) != size)
     {
