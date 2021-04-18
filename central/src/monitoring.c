@@ -1,6 +1,7 @@
 #include <monitoring.h>
 #include <menu.h>
 #include <client.h>
+#include <stdio.h>
 
 Output _output;
 Input _input;
