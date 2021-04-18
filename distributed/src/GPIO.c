@@ -66,6 +66,8 @@ void* main_GPIO(){
 
     pinMode(PRES2, OUTPUT);
     wiringPiISR(PRES2, INT_EDGE_BOTH, &handle_pres2);
+
+    return NULL;
 }
 
 void GPIO_toggle(int port)

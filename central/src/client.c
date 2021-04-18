@@ -19,6 +19,7 @@ void request_GPIO_toggle(int port, char* response)
     int socketid = socket(AF_INET, SOCK_STREAM, 0);
     if (socketid == -1)
     {
+        close(socketid);
         exit(1);
     }
 
@@ -28,6 +29,7 @@ void request_GPIO_toggle(int port, char* response)
 
     if (connect(socketid, (struct sockaddr *)&client, sizeof(client)) < 0)
     {
+        close(socketid);
         exit(1);
     }
 
@@ -36,12 +38,14 @@ void request_GPIO_toggle(int port, char* response)
     int size = strlen(buf);
     if (send(socketid, buf, size, 0) != size)
     {
+        close(socketid);
         exit(1);
     }
 
     int size_rec = recv(socketid, response, 16, 0);
     if (size_rec < 0)
     {
+        close(socketid);
         exit(1);
     }
 
@@ -75,12 +79,14 @@ void request_BME280_data(char* response)
     int size = strlen(buf);
     if (send(socketid, buf, size, 0) != size)
     {
+        close(socketid);
         exit(1);
     }
 
     int size_rec = recv(socketid, response, 16, 0);
     if (size_rec < 0)
     {
+        close(socketid);
         exit(1);
     }
 

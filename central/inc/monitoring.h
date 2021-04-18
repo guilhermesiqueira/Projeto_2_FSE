@@ -1,6 +1,6 @@
 
-#ifndef MONITOR_H_
-#define MONITOR_H_
+#ifndef MONITORING_H_
+#define MONITORING_H_
 
 
 typedef struct {
@@ -30,4 +30,4 @@ void set_output(int code);
 Input get_input();
 Output get_output();
 
-#endif /* MONITOR_H_ */
+#endif /* MONITORING_H_ */

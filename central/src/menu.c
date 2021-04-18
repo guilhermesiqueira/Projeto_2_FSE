@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <ncurses.h>
 #include <menu.h>
-#include <monitor.h>
+#include <monitoring.h>
 
 #define WIDTH 50
 #define HEIGHT 25
@@ -113,7 +113,7 @@ void print_data(Output output)
 }
 
 void print_temperature(float temperature, float humidity) {
-    mvwprintw(menu_win, 9, 2, "Temperatura: %4.2f", temperature);
-    mvwprintw(menu_win, 10, 2, "Umidade: %4.2f", humidity);    
+    mvwprintw(menu_win, 10, 2, "Temperatura: %4.2f", temperature);
+    mvwprintw(menu_win, 11, 2, "Umidade: %4.2f", humidity);    
     wrefresh(menu_win);
 }

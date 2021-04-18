@@ -9,6 +9,7 @@
 #include <sys/types.h>
 #include <fcntl.h>
 #include <bme280.h>
+#include <GPIO.h>
 
 #define SERVER_DISTRIBUTED_PORT 10112
 
