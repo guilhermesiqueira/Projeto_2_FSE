@@ -34,8 +34,8 @@ void request_GPIO_toggle(int port, char* response)
         exit(1);
     }
 
-    char buf[4];
-    snprintf(buf, 4, "%c %d", 'G', port);
+    char buf[5];
+    snprintf(buf, 5, "%c %d", 'G', port);
     int size = strlen(buf);
     if (send(socketid, buf, size, 0) != size)
     {
