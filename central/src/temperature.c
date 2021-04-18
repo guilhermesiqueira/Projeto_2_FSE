@@ -13,6 +13,7 @@ void* main_temperature(){
         char res;
         
         request_BME280_data(response);
+        printf("response: %f\n", response);
         sscanf(response, "%c %f %f", res, temperature, humidity);
         print_temperature(temperature, humidity);
 

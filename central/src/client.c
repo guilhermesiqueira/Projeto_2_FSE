@@ -89,7 +89,6 @@ void request_BME280_data(char* response)
         close(socketid);
         exit(1);
     }
-    printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nRESPONSE: %c", response);
     response[15] = '\0';
 
     close(socketid);
