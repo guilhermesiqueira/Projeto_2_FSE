@@ -105,6 +105,7 @@ void print_menu(WINDOW *menu_win, int highlight)
 
 void print_data(Output output)
 {
+    printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nOUTPUT DA LAMP1: %d", output.lamp1);
     mvwprintw(menu_win, 2, 21, "%s", output.lamp1 == 1 ? "LIGADO        " : "DESLIGADO");
     mvwprintw(menu_win, 3, 21, "%s", output.lamp2 == 1 ? "LIGADO        " : "DESLIGADO");
     mvwprintw(menu_win, 4, 21, "%s", output.lamp3 == 1 ? "LIGADO        " : "DESLIGADO");
