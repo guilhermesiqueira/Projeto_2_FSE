@@ -23,7 +23,7 @@ char *choices[] = {
 int n_choices = sizeof(choices) / sizeof(char *);
 void print_menu(WINDOW *menu_win, int highlight);
 
-void *main_menu()
+void* main_menu()
 {
     int highlight = 1;
     int choice = 0;
@@ -46,6 +46,8 @@ void *main_menu()
         print_menu(menu_win, highlight);
         Output output = get_output();
         print_data(output);
+        Input input = get_input();
+        print_entry(input);
         c = wgetch(menu_win);
         switch (c)
         {
@@ -102,18 +104,46 @@ void print_menu(WINDOW *menu_win, int highlight)
 
 void print_data(Output output)
 {
-    mvwprintw(menu_win, 2, 21, "%s", output.lamp1 ? "LIGADO   " : "DESLIGADO");
-    mvwprintw(menu_win, 3, 21, "%s", output.lamp2 ? "LIGADO   " : "DESLIGADO");
-    mvwprintw(menu_win, 4, 21, "%s", output.lamp3 ? "LIGADO   " : "DESLIGADO");
-    mvwprintw(menu_win, 5, 21, "%s", output.lamp4 ? "LIGADO   " : "DESLIGADO");
-    mvwprintw(menu_win, 6, 21, "%s", output.ac1 ? "LIGADO   " : "DESLIGADO");
-    mvwprintw(menu_win, 7, 21, "%s", output.ac2 ? "LIGADO   " : "DESLIGADO");
-    mvwprintw(menu_win, 8, 21, "%s", output.alarm ? "LIGADO   " : "DESLIGADO");
+    mvwprintw(menu_win, 2, 21, "%s", output.lamp1 == 1 ? "LIGADO   " : "DESLIGADO");
+    mvwprintw(menu_win, 3, 21, "%s", output.lamp2 == 1 ? "LIGADO   " : "DESLIGADO");
+    mvwprintw(menu_win, 4, 21, "%s", output.lamp3 == 1 ? "LIGADO   " : "DESLIGADO");
+    mvwprintw(menu_win, 5, 21, "%s", output.lamp4 == 1 ? "LIGADO   " : "DESLIGADO");
+    mvwprintw(menu_win, 6, 21, "%s", output.ac1 == 1 ? "LIGADO   " : "DESLIGADO");
+    mvwprintw(menu_win, 7, 21, "%s", output.ac2 == 1 ? "LIGADO   " : "DESLIGADO");
+    mvwprintw(menu_win, 8, 21, "%s", output.alarm == 1 ? "LIGADO   " : "DESLIGADO");
     wrefresh(menu_win);
 }
 
 void print_temperature(float temperature, float humidity) {
     mvwprintw(menu_win, 10, 2, "Temperatura: %4.2f", temperature);
     mvwprintw(menu_win, 11, 2, "Umidade: %4.2f", humidity);    
+    wrefresh(menu_win);
+}
+
+void print_entry(Input input) {
+	mvwprintw(menu_win, 13, 22, "Sensor de Presença 01 (Sala):");
+	mvwprintw(menu_win, 13, 61, input.pres1 == 1 ? "LIGADO " : "DESLIGADO");
+
+	mvwprintw(menu_win, 14, 22, "Sensor de Presença 02 (Cozinha):");
+	mvwprintw(menu_win, 14, 61, input.pres2 == 1 ? "LIGADO " : "DESLIGADO");
+
+	mvwprintw(menu_win, 15, 22, "Sensor Abertura 01 (Porta Cozinha):");
+	mvwprintw(menu_win, 15, 61, input.abr1 == 1 ? "LIGADO      " : "DESLIGADO");
+
+	mvwprintw(menu_win, 16, 22, "Sensor Abertura 02 (Janela Cozinha):");
+	mvwprintw(menu_win, 16, 61, input.abr2 == 1 ? "LIGADO      " : "DESLIGADO");
+
+	mvwprintw(menu_win, 17, 22, "Sensor Abertura 03 (Porta Sala):");
+	mvwprintw(menu_win, 17, 61, input.abr3 == 1 ? "LIGADO      " : "DESLIGADO");
+
+	mvwprintw(menu_win, 18, 22, "Sensor Abertura 04 (Janela Sala):");
+	mvwprintw(menu_win, 18, 61, input.abr4 == 1 ? "LIGADO      " : "DESLIGADO");
+
+	mvwprintw(menu_win, 19, 22, "Sensor Abertura 05 (Janela Quarto 01):");
+	mvwprintw(menu_win, 19, 61, input.abr5 == 1 ? "LIGADO      " : "DESLIGADO");
+
+	mvwprintw(menu_win, 20, 22, "Sensor Abertura 06 (Janela Quarto 02):");
+	mvwprintw(menu_win, 20, 61, input.abr6 == 1 ? "LIGADO      " : "DESLIGADO");
+
     wrefresh(menu_win);
 }
