@@ -75,7 +75,7 @@ void set_input(int code)
 void set_output(int code)
 {
     Output output = _output;
-    printf("code no setoutput: %d\n", code);
+    printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ncode no setoutput: %d\n", code);
     if (code == 1)
     {
         _output.lamp1 = _output.lamp1 == 1 ? 0 : 1;
