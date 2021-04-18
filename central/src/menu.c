@@ -3,7 +3,7 @@
 #include <menu.h>
 #include <monitoring.h>
 
-#define WIDTH 50
+#define WIDTH 100
 #define HEIGHT 25
 
 int startx = 0;
