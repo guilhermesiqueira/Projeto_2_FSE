@@ -61,7 +61,7 @@ void *create_server()
             int port;
             sscanf(buffer, "%c %d", &code, &port);
             GPIO_toggle(port);
-            send(clientid, code, 1, 0);
+            send(clientid, code, 2, 0);
         }
         close(clientid);
     }
