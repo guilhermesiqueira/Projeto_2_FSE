@@ -44,6 +44,7 @@ void* main_menu()
     Input input = get_input();
     print_data(output);
     print_entry(input);
+    print_alarm(output.alarm);
     while (1)
     {
         print_menu(menu_win, highlight);
@@ -126,29 +127,29 @@ void print_alarm(int status) {
 }
 
 void print_entry(Input input) {
-	mvwprintw(menu_win, 14, 2, "Sensor de Presença 01 (Sala): ");
-	mvwprintw(menu_win, 14, 65, input.pres1 ? "LIGADO   " : "DESLIGADO");
+	mvwprintw(menu_win, 15, 2, "Sensor de Presença 01 (Sala): ");
+	mvwprintw(menu_win, 15, 65, input.pres1 ? "LIGADO   " : "DESLIGADO");
 
-	mvwprintw(menu_win, 15, 2, "Sensor de Presença 02 (Cozinha):");
-	mvwprintw(menu_win, 15, 65, input.pres2 ? "LIGADO   " : "DESLIGADO");
+	mvwprintw(menu_win, 16, 2, "Sensor de Presença 02 (Cozinha):");
+	mvwprintw(menu_win, 16, 65, input.pres2 ? "LIGADO   " : "DESLIGADO");
 
-	mvwprintw(menu_win, 16, 2, "Sensor Abertura 01 (Porta Cozinha):");
-	mvwprintw(menu_win, 16, 65, input.abr1 ? "LIGADO   " : "DESLIGADO");
+	mvwprintw(menu_win, 17, 2, "Sensor Abertura 01 (Porta Cozinha):");
+	mvwprintw(menu_win, 17, 65, input.abr1 ? "LIGADO   " : "DESLIGADO");
 
-	mvwprintw(menu_win, 17, 2, "Sensor Abertura 02 (Janela Cozinha):");
-	mvwprintw(menu_win, 17, 65, input.abr2 ? "LIGADO   " : "DESLIGADO");
+	mvwprintw(menu_win, 18, 2, "Sensor Abertura 02 (Janela Cozinha):");
+	mvwprintw(menu_win, 18, 65, input.abr2 ? "LIGADO   " : "DESLIGADO");
 
-	mvwprintw(menu_win, 18, 2, "Sensor Abertura 03 (Porta Sala):");
-	mvwprintw(menu_win, 18, 65, input.abr3 ? "LIGADO   " : "DESLIGADO");
+	mvwprintw(menu_win, 19, 2, "Sensor Abertura 03 (Porta Sala):");
+	mvwprintw(menu_win, 19, 65, input.abr3 ? "LIGADO   " : "DESLIGADO");
 
-	mvwprintw(menu_win, 19, 2, "Sensor Abertura 04 (Janela Sala):");
-	mvwprintw(menu_win, 19, 65, input.abr4 ? "LIGADO   " : "DESLIGADO");
+	mvwprintw(menu_win, 20, 2, "Sensor Abertura 04 (Janela Sala):");
+	mvwprintw(menu_win, 20, 65, input.abr4 ? "LIGADO   " : "DESLIGADO");
 
-	mvwprintw(menu_win, 20, 2, "Sensor Abertura 05 (Janela Quarto 01):");
-	mvwprintw(menu_win, 20, 65, input.abr5 ? "LIGADO      " : "DESLIGADO");
+	mvwprintw(menu_win, 21, 2, "Sensor Abertura 05 (Janela Quarto 01):");
+	mvwprintw(menu_win, 21, 65, input.abr5 ? "LIGADO      " : "DESLIGADO");
 
-	mvwprintw(menu_win, 21, 2, "Sensor Abertura 06 (Janela Quarto 02):");
-	mvwprintw(menu_win, 21, 65, input.abr6 ? "LIGADO      " : "DESLIGADO");
+	mvwprintw(menu_win, 22, 2, "Sensor Abertura 06 (Janela Quarto 02):");
+	mvwprintw(menu_win, 22, 65, input.abr6 ? "LIGADO      " : "DESLIGADO");
 
     wrefresh(menu_win);
 }
