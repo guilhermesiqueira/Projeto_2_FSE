@@ -122,7 +122,7 @@ void print_temperature(double temperature, double humidity) {
 }
 
 void print_alarm(int status) {
-    mvwprintw(menu_win, 13, 2, "Alarme: %s", status ? "TOCANDO    " : "NÃO TOCANDO");    
+    mvwprintw(menu_win, 13, 2, "Alarme: %s", status ? "TOCANDO    " : "NAO TOCANDO");    
 }
 
 void print_entry(Input input) {
