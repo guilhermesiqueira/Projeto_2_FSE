@@ -50,7 +50,6 @@ void request_GPIO_toggle(int port, char* response)
     }
 
     response[15] = '\0';
-    memset(buf, 0, 5);
     close(socketid);
 
 }
