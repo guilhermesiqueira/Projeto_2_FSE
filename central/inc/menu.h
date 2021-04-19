@@ -9,6 +9,6 @@ void print_data(Output output);
 void print_entry(Input input);
 Output get_output();
 Input get_input();
-void print_temperature(float temperature, float humidity);
+void print_temperature(double temperature, double humidity);
 
 #endif /* MENU_H_ */

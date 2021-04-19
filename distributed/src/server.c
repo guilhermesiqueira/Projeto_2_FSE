@@ -52,7 +52,7 @@ void *create_server()
         if(code == 'B'){
             struct bme280_data data = bme280_read();
             char response[16];
-            snprintf(response, 16, "%c %f %f", code, data.temperature, data.humidity);
+            snprintf(response, 16, "%c %lf %lf", code, data.temperature, data.humidity);
             int size = strlen(response);
             send(clientid, response, size, 0);
         }
