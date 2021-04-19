@@ -151,6 +151,8 @@ void set_output(int code)
         char response[16];
         char res;
         request_GPIO_toggle(port, response);
+        printf("PORT: %d\n", port);
+        printf("CODE: %d", code);
         sscanf(response, "%c", &res);
 
         if (res != 'G')
