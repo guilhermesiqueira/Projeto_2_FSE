@@ -52,7 +52,6 @@ void *create_server()
         if(code == 'B'){
             struct bme280_data data = bme280_read();
             char response[16];
-            printf("TEMPERATURA: %f\n", data.temperature);
             snprintf(response, 16, "%c %f %f", code, data.temperature, data.humidity);
             int size = strlen(response);
             send(clientid, response, size, 0);

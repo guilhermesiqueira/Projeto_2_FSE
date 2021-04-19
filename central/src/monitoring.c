@@ -104,7 +104,6 @@ void set_output(int code)
         _output.alarm = _output.alarm == 1 ? 0 : 1;
     }
 
-    printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nsetoutput printdata: %d\n", _output.lamp1);
     print_data(_output);
     int port = -1;
 
