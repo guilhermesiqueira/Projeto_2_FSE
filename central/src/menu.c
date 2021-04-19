@@ -39,7 +39,6 @@ void* main_menu()
 
     menu_win = newwin(HEIGHT, WIDTH, 0, 0);
     keypad(menu_win, TRUE);
-    // mvprintw(0, 0, "Use arrow keys to go up and down, Press enter to select a choice");
     refresh();
     Output output = get_output();
     Input input = get_input();

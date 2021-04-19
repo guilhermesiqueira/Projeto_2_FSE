@@ -38,35 +38,35 @@ Input get_input()
 
 void set_input(int code)
 {
-    if (code == 1)
+    if (code == 21)
     {
         _input.abr1 = _input.abr1 ? 0 : 1;
     }
-    if (code == 2)
+    if (code == 22)
     {
         _input.abr2 = _input.abr2 ? 0 : 1;
     }
-    if (code == 3)
+    if (code == 26)
     {
         _input.abr3 = _input.abr3 ? 0 : 1;
     }
-    if (code == 4)
+    if (code == 27)
     {
         _input.abr4 = _input.abr4 ? 0 : 1;
     }
-    if (code == 5)
+    if (code == 28)
     {
         _input.abr5 = _input.abr5 ? 0 : 1;
     }
-    if (code == 6)
+    if (code == 29)
     {
         _input.abr6 = _input.abr6 ? 0 : 1;
     }
-    if (code == 7)
+    if (code == 6)
     {
         _input.pres1 = _input.pres1 ? 0 : 1;
     }
-    if (code == 8)
+    if (code == 25)
     {
         _input.pres2 = _input.pres2 ? 0 : 1;
     }
