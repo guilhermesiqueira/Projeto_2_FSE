@@ -42,7 +42,9 @@ void* main_menu()
     // mvprintw(0, 0, "Use arrow keys to go up and down, Press enter to select a choice");
     refresh();
     Output output = get_output();
+    Input input = get_input();
     print_data(output);
+    print_entry(input);
     while (1)
     {
         print_menu(menu_win, highlight);
