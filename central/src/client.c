@@ -9,7 +9,7 @@
 #include <sys/types.h>
 #include <fcntl.h>
 
-#define SERVER_DISTRIBUTED_IP "192.168.0.52"
+#define SERVER_DISTRIBUTED_IP "192.168.0.4"
 #define SERVER_DISTRIBUTED_PORT 10112
 
 void request_GPIO_toggle(int port, char* response)
