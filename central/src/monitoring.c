@@ -2,6 +2,7 @@
 #include <menu.h>
 #include <client.h>
 #include <stdio.h>
+#include <csv.h>
 
 Output _output;
 Input _input;
@@ -88,30 +89,65 @@ void set_output(int code)
     if (code == 1)
     {
         _output.lamp1 = _output.lamp1 == 1 ? 0 : 1;
+        Data data;
+        char *command = "LAMP1";
+        data.command = command;
+        data.state = _output.lamp1;
+        write_data(data);
     }
     if (code == 2)
     {
         _output.lamp2 = _output.lamp2 == 1 ? 0 : 1;
+        Data data;
+        char *command = "LAMP2";
+        data.command = command;
+        data.state = _output.lamp2;
+        write_data(data);
     }
     if (code == 3)
     {
         _output.lamp3 = _output.lamp3 == 1 ? 0 : 1;
+        Data data;
+        char *command = "LAMP3";
+        data.command = command;
+        data.state = _output.lamp3;
+        write_data(data);
     }
     if (code == 4)
     {
         _output.lamp4 = _output.lamp4 == 1 ? 0 : 1;
+        Data data;
+        char *command = "LAMP4";
+        data.command = command;
+        data.state = _output.lamp4;
+        write_data(data);
     }
     if (code == 5)
     {
         _output.ac1 = _output.ac1 == 1 ? 0 : 1;
+        Data data;
+        char *command = "AC1";
+        data.command = command;
+        data.state = _output.ac1;
+        write_data(data);
     }
     if (code == 6)
     {
         _output.ac2 = _output.ac2 == 1 ? 0 : 1;
+        Data data;
+        char *command = "AC2";
+        data.command = command;
+        data.state = _output.ac2;
+        write_data(data);
     }
     if (code == 7)
     {
         _output.alarm = _output.alarm == 1 ? 0 : 1;
+        Data data;
+        char *command = "ALARM";
+        data.command = command;
+        data.state = _output.alarm;
+        write_data(data);
         if (_output.alarm == 0)
         {
             print_alarm(0);
