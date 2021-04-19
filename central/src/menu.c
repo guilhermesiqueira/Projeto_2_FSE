@@ -4,7 +4,7 @@
 #include <monitoring.h>
 
 #define WIDTH 100
-#define HEIGHT 25
+#define HEIGHT 30
 
 int startx = 0;
 int starty = 0;
