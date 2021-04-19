@@ -70,6 +70,8 @@ void set_input(int code)
     {
         _input.pres2 = _input.pres2 ? 0 : 1;
     }
+
+    print_entry(_input);
 }
 
 void set_output(int code)

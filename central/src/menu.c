@@ -44,10 +44,6 @@ void* main_menu()
     while (1)
     {
         print_menu(menu_win, highlight);
-        Output output = get_output();
-        print_data(output);
-        Input input = get_input();
-        print_entry(input);
         c = wgetch(menu_win);
         switch (c)
         {
@@ -65,7 +61,7 @@ void* main_menu()
             break;
         case 10:
             choice = highlight;
-            mvwprintw(menu_win, 28, 2, "You chose choice %d with choice string %s", choice, choices[choice - 1]); //debug
+            // mvwprintw(menu_win, 28, 2, "You chose choice %d with choice string %s", choice, choices[choice - 1]); //debug
             set_output(choice);
             break;
         default:
