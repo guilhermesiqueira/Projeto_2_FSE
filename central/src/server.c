@@ -47,6 +47,7 @@ void *create_server()
         buffer[15] = '\0';
         int code;
         sscanf(buffer, "%d", &code);
+        printf("code: %d\n", code);
         set_input(code);
         close(clientid);
     }
