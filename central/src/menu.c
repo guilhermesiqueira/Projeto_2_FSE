@@ -121,6 +121,10 @@ void print_temperature(double temperature, double humidity) {
     wrefresh(menu_win);
 }
 
+void print_alarm(int status) {
+    mvwprintw(menu_win, 12, 2, "Alarme: %s", status ? "TOCANDO    " : "NÃO TOCANDO");    
+}
+
 void print_entry(Input input) {
 	mvwprintw(menu_win, 13, 2, "Sensor de Presença 01 (Sala): ");
 	mvwprintw(menu_win, 13, 65, input.pres1 ? "LIGADO   " : "DESLIGADO");

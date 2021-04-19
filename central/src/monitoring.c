@@ -71,6 +71,14 @@ void set_input(int code)
         _input.pres2 = _input.pres2 ? 0 : 1;
     }
 
+    if ((_input.abr1 || _input.abr2 || _input.abr3 || _input.abr4 || _input.abr5 || _input.abr6 || _input.pres1 || _input.pres2) && _output.alarm)
+    {
+       print_alarm(1);
+    } else {
+        print_alarm(0);
+    }
+    
+
     print_entry(_input);
 }
 
@@ -104,6 +112,10 @@ void set_output(int code)
     if (code == 7)
     {
         _output.alarm = _output.alarm == 1 ? 0 : 1;
+        if (_output.alarm == 0)
+        {
+            print_alarm(0);
+        }
     }
 
     print_data(_output);
@@ -146,6 +158,5 @@ void set_output(int code)
             _output = output;
             print_data(_output);
         }
-        
     }
 }

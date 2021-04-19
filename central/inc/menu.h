@@ -10,5 +10,6 @@ void print_entry(Input input);
 Output get_output();
 Input get_input();
 void print_temperature(double temperature, double humidity);
+void print_alarm(int status);
 
 #endif /* MENU_H_ */
