@@ -116,7 +116,6 @@ void print_data(Output output)
 }
 
 void print_temperature(double temperature, double humidity) {
-    printf("TEMPERATURAAAAAA: %lf\n", temperature);
     mvwprintw(menu_win, 10, 2, "Temperatura: %lf", temperature);
     mvwprintw(menu_win, 11, 2, "Umidade: %lf", humidity);    
     wrefresh(menu_win);
