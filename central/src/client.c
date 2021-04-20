@@ -14,7 +14,6 @@
 
 void request_GPIO_toggle(int port, char* response)
 {
-    printf("----------- PORTA 1: %d --------------\n", port);
     struct sockaddr_in client;
 
     int socketid = socket(AF_INET, SOCK_STREAM, 0);
@@ -36,8 +35,6 @@ void request_GPIO_toggle(int port, char* response)
 
     char buf[5];
     snprintf(buf, 5, "%c %d ", 'G', port);
-    printf("----------- PORTA 2: %d --------------\n", port);
-    printf("----------- BUF: %s --------------\n", buf);
 
     int size = strlen(buf);
     if (send(socketid, buf, size, 0) != size)

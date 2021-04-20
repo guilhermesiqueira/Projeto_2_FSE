@@ -46,7 +46,6 @@ void *create_server()
         }
 
         buffer[15] = '\0';
-        printf("BUFFER: %s\n", buffer);
         char code;
         sscanf(buffer, "%c", &code);
 

@@ -80,7 +80,6 @@ void* main_GPIO(){
 
 void GPIO_toggle(int port)
 {
-    printf("PORT:::: %d\n", port);
     if (port == 0){
         output.lamp1 = output.lamp1 ? 0 : 1;
         pinMode(port, OUTPUT);

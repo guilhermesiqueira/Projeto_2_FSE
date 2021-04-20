@@ -155,78 +155,38 @@ void set_output(int code)
     }
 
     print_data(_output);
-    // int port = -1;
+    int port = -1;
 
     if (code == 1)
     {
-        char response[16];
-        char res;
-        request_GPIO_toggle(LAMP1, response);
-        sscanf(response, "%c", &res);
-
-        if (res != 'G')
-        {
-            _output = output;
-            print_data(_output);
-        }
+        port = LAMP1;
     }
     if (code == 2)
     {
-        char response[16];
-        char res;
-        request_GPIO_toggle(LAMP2, response);
-        sscanf(response, "%c", &res);
-
-        if (res != 'G')
-        {
-            _output = output;
-            print_data(_output);
-        }
+        port = LAMP2;
     }
     if (code == 3)
     {
-        char response[16];
-        char res;
-        request_GPIO_toggle(LAMP3, response);
-        sscanf(response, "%c", &res);
-
-        if (res != 'G')
-        {
-            _output = output;
-            print_data(_output);
-        }
+        port = LAMP3;
     }
     if (code == 4)
     {
-        char response[16];
-        char res;
-        request_GPIO_toggle(LAMP4, response);
-        sscanf(response, "%c", &res);
-
-        if (res != 'G')
-        {
-            _output = output;
-            print_data(_output);
-        }
+        port = LAMP4;
     }
     if (code == 5)
     {
-        char response[16];
-        char res;
-        request_GPIO_toggle(AC1, response);
-        sscanf(response, "%c", &res);
-
-        if (res != 'G')
-        {
-            _output = output;
-            print_data(_output);
-        }
+        port = AC1;
     }
     if (code == 6)
     {
+        port = AC2;
+    }
+
+    if (port != -1)
+    {
         char response[16];
         char res;
-        request_GPIO_toggle(AC2, response);
+        request_GPIO_toggle(port, response);
         sscanf(response, "%c", &res);
 
         if (res != 'G')
@@ -235,18 +195,4 @@ void set_output(int code)
             print_data(_output);
         }
     }
-
-    // if (port != -1)
-    // {
-    //     char response[16];
-    //     char res;
-    //     request_GPIO_toggle(port, response);
-    //     sscanf(response, "%c", &res);
-
-    //     if (res != 'G')
-    //     {
-    //         _output = output;
-    //         print_data(_output);
-    //     }
-    // }
 }
