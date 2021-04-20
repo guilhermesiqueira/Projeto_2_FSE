@@ -2,6 +2,7 @@
 #include <softPwm.h>
 #include <client.h>
 #include <GPIO.h>
+#include <stdio.h>
 
 Output output;
 

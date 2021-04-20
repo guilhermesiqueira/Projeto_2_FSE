@@ -65,7 +65,7 @@ void* main_menu()
             break;
         case 10:
             choice = highlight;
-            mvwprintw(menu_win, 28, 2, "You chose choice %d with choice string %s", choice, choices[choice - 1]); //debug
+            // mvwprintw(menu_win, 28, 2, "You chose choice %d with choice string %s", choice, choices[choice - 1]); //debug
             set_output(choice);
             break;
         default:
