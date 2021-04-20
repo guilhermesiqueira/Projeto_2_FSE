@@ -49,6 +49,14 @@ void *create_server()
         printf("BUFFER: %s\n", buffer);
         char code;
         sscanf(buffer, "%c", &code);
+
+        if(code == 'G'){
+            int port = 0;
+            sscanf(buffer, "%c %d", &code, &port);
+            GPIO_toggle(port);
+            send(clientid, &code, 2, 0);
+        }
+
         if(code == 'B'){
             struct bme280_data data = bme280_read();
             char response[16];
@@ -57,12 +65,6 @@ void *create_server()
             send(clientid, response, size, 0);
         }
 
-        if(code == 'G'){
-            int port;
-            sscanf(buffer, "%c %d", &code, &port);
-            GPIO_toggle(port);
-            send(clientid, &code, 2, 0);
-        }
         close(clientid);
     }
 

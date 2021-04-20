@@ -35,7 +35,7 @@ void request_GPIO_toggle(int port, char* response)
     }
 
     char buf[5];
-    snprintf(buf, 5, "%c %d", 'G', port);
+    snprintf(buf, 5, "%c %d ", 'G', port);
     printf("----------- PORTA 2: %d --------------\n", port);
     printf("----------- BUF: %s --------------\n", buf);
 
